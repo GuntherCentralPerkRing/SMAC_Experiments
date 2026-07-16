@@ -1,0 +1,215 @@
+[INFO 08:26:48] pymarl Running command 'my_main'
+[INFO 08:26:48] pymarl Started run with ID "1"
+[DEBUG 08:26:48] pymarl Starting Heartbeat
+[DEBUG 08:26:48] my_main Started
+[INFO 08:26:48] my_main Experiment Parameters:
+[INFO 08:26:48] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'n_rnn',
+    'agent_output_type': 'q',
+    'batch_size': 128,
+    'batch_size_run': 8,
+    'buffer_cpu_only': True,
+    'buffer_size': 5000,
+    'checkpoint_path': '',
+    'critic_lr': 0.0005,
+    'env': 'sc2',
+    'env_args': {   'continuing_episode': False,
+                    'debug': False,
+                    'difficulty': '7',
+                    'game_version': None,
+                    'heuristic_ai': False,
+                    'heuristic_rest': False,
+                    'map_name': 'mmm2',
+                    'move_amount': 2,
+                    'obs_all_health': True,
+                    'obs_instead_of_state': False,
+                    'obs_last_action': False,
+                    'obs_own_health': True,
+                    'obs_pathing_grid': False,
+                    'obs_terrain_height': False,
+                    'obs_timestep_number': False,
+                    'replay_dir': '',
+                    'replay_prefix': '',
+                    'reward_death_value': 10,
+                    'reward_defeat': 0,
+                    'reward_negative_scale': 0.5,
+                    'reward_only_positive': True,
+                    'reward_scale': True,
+                    'reward_scale_rate': 20,
+                    'reward_sparse': False,
+                    'reward_win': 200,
+                    'seed': 472332463,
+                    'state_last_action': True,
+                    'state_timestep_number': False,
+                    'step_mul': 8},
+    'epsilon_anneal_time': 100000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gain': 0.01,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hypernet_embed': 64,
+    'label': 'default_label',
+    'learner': 'nq_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.001,
+    'mac': 'n_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'qmix_env=8_adam_td_lambda',
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'optimizer': 'adam',
+    'per_alpha': 0.6,
+    'per_beta': 0.4,
+    'q_lambda': False,
+    'repeat_id': 1,
+    'return_priority': False,
+    'rnn_hidden_dim': 64,
+    'run': 'default',
+    'runner': 'parallel',
+    'runner_log_interval': 10000,
+    'save_model': False,
+    'save_model_interval': 2000000,
+    'save_replay': False,
+    'seed': 472332463,
+    't_max': 10050000,
+    'target_update_interval': 200,
+    'td_lambda': 0.6,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 32,
+    'use_cuda': True,
+    'use_layer_norm': False,
+    'use_orthogonal': False,
+    'use_per': False,
+    'use_tensorboard': False}
+
+Process Process-1:
+Traceback (most recent call last):
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/vince/code/pymarl2/src/runners/parallel_runner.py", line 227, in env_worker
+    env = env_fn.x()
+  File "/home/vince/code/pymarl2/src/envs/__init__.py", line 19, in env_fn
+    return env(**kwargs)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 196, in __init__
+    map_params = get_map_params(self.map_name)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/smac_maps.py", line 43, in get_map_params
+    return map_param_registry[map_name]
+KeyError: 'mmm2'
+Process Process-2:
+Traceback (most recent call last):
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/vince/code/pymarl2/src/runners/parallel_runner.py", line 227, in env_worker
+    env = env_fn.x()
+  File "/home/vince/code/pymarl2/src/envs/__init__.py", line 19, in env_fn
+    return env(**kwargs)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 196, in __init__
+    map_params = get_map_params(self.map_name)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/smac_maps.py", line 43, in get_map_params
+    return map_param_registry[map_name]
+KeyError: 'mmm2'
+Process Process-3:
+Traceback (most recent call last):
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/vince/code/pymarl2/src/runners/parallel_runner.py", line 227, in env_worker
+    env = env_fn.x()
+  File "/home/vince/code/pymarl2/src/envs/__init__.py", line 19, in env_fn
+    return env(**kwargs)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 196, in __init__
+    map_params = get_map_params(self.map_name)
+Process Process-4:
+Traceback (most recent call last):
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/vince/code/pymarl2/src/runners/parallel_runner.py", line 227, in env_worker
+    env = env_fn.x()
+  File "/home/vince/code/pymarl2/src/envs/__init__.py", line 19, in env_fn
+    return env(**kwargs)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 196, in __init__
+    map_params = get_map_params(self.map_name)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/smac_maps.py", line 43, in get_map_params
+    return map_param_registry[map_name]
+KeyError: 'mmm2'
+  File "/home/vince/code/pymarl2/src/envs/starcraft/smac_maps.py", line 43, in get_map_params
+    return map_param_registry[map_name]
+KeyError: 'mmm2'
+Process Process-5:
+Traceback (most recent call last):
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/vince/code/pymarl2/src/runners/parallel_runner.py", line 227, in env_worker
+    env = env_fn.x()
+  File "/home/vince/code/pymarl2/src/envs/__init__.py", line 19, in env_fn
+    return env(**kwargs)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 196, in __init__
+    map_params = get_map_params(self.map_name)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/smac_maps.py", line 43, in get_map_params
+    return map_param_registry[map_name]
+KeyError: 'mmm2'
+Process Process-6:
+Process Process-7:
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/vince/code/pymarl2/src/runners/parallel_runner.py", line 227, in env_worker
+    env = env_fn.x()
+  File "/home/vince/code/pymarl2/src/runners/parallel_runner.py", line 227, in env_worker
+    env = env_fn.x()
+  File "/home/vince/code/pymarl2/src/envs/__init__.py", line 19, in env_fn
+    return env(**kwargs)
+  File "/home/vince/code/pymarl2/src/envs/__init__.py", line 19, in env_fn
+    return env(**kwargs)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 196, in __init__
+    map_params = get_map_params(self.map_name)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 196, in __init__
+    map_params = get_map_params(self.map_name)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/smac_maps.py", line 43, in get_map_params
+    return map_param_registry[map_name]
+  File "/home/vince/code/pymarl2/src/envs/starcraft/smac_maps.py", line 43, in get_map_params
+    return map_param_registry[map_name]
+KeyError: 'mmm2'
+KeyError: 'mmm2'
+Process Process-8:
+Traceback (most recent call last):
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/vince/miniconda3/envs/pymarl/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/vince/code/pymarl2/src/runners/parallel_runner.py", line 227, in env_worker
+    env = env_fn.x()
+  File "/home/vince/code/pymarl2/src/envs/__init__.py", line 19, in env_fn
+    return env(**kwargs)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 196, in __init__
+    map_params = get_map_params(self.map_name)
+  File "/home/vince/code/pymarl2/src/envs/starcraft/smac_maps.py", line 43, in get_map_params
+    return map_param_registry[map_name]
+KeyError: 'mmm2'
