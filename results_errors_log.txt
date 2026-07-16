@@ -1,0 +1,8 @@
+test_battle_won_mean:
+
+8m9m run 2 不够100%
+
+5m6m run 1,2 不够90%
+
+3s5z_vs_3s6z run2 不够75%
+
